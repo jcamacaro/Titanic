@@ -1,0 +1,49 @@
+---
+title: "titanic1.Rmd"
+output: html_document
+---
+```{r libraries}
+# Required Libraries:
+library(plyr)
+library(lattice)
+library(ggplot2)
+setwd("~/Documents/R_place/kaggel_titanic")
+```
+
+# Titanic Dataset 1
+  This is a first exploration of the Kaggel titanic data set.
+ 
+ The variables included in this dataset are:
+ 
+  * survival        Survival (0 = No; 1 = Yes)
+
+  * pclass          Passenger Class (1 = 1st; 2 = 2nd; 3 = 3rd)
+ 
+  * name            Name
+ 
+  * sex             Sex
+
+  * age             Age
+
+  * sibsp           Number of Siblings/Spouses Aboard
+
+  * parch           Number of Parents/Children Aboard
+
+  * ticket          Ticket Number
+  
+  * fare            Passenger Fare
+
+  * cabin           Cabin
+
+  * embarked        Port of Embarkation (C = Cherbourg; Q = Queenstown; S = Southampton)
+ 
+  The dataset is stored in a comma-separated-value (CSV) file and there are a total of 891 observations in this dataset.
+  
+```{r readingData, echo = TRUE}
+test<- read.csv("./data/train.csv", header=TRUE, sep=",")
+summary(test)
+dim(test)
+names(test)
+length(unique(test$PassengerId))
+```
+
